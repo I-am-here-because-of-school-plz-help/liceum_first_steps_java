@@ -11,11 +11,13 @@ public class Java1{
         boolean equalsOk = true;
         for (int i = -100; i <= 100; i++){
             for (int j = -100; j <= 100; j++){
-                Vector v1 = new Vector(i,j);// Задаем координаты вектора
-                Vector v2 = new Vector(i,j);// Задаем координаты вектора
+                for (int k = -100; k <= 100; k++){
+                Vector v1 = new Vector(i,j,k);// Задаем координаты вектора
+                Vector v2 = new Vector(i,j,k);// Задаем координаты вектора
                 if(!v1.equals(v2)){
                     equalsOk = false;//Равны вектора?
-                }
+                      }
+                 }
             }
         }
         if(equalsOk){
@@ -29,11 +31,13 @@ public class Java1{
         boolean Sum = true;//задаём логическую переменную
         for(int i = -100; i<= 100; i++){
             for (int j = -100; j <= 100; j++){
-                Vector v1 = new Vector(i,j);// задаём координаты вектора
-                Vector v2 = new Vector( -1 *i , -1 * j);//Задаем координаты обратные
+                for (int k = -100; k <= 100; k++){
+                Vector v1 = new Vector(i,j,k);// задаём координаты вектора
+                Vector v2 = new Vector( -1 *i , -1 * j, -1*k);//Задаем координаты обратные
                 Vector v3 = v1.plus(v2);// записываем результат сложения
-                if((v3.i != 0) || (v3.j != 0)){
+                if((v3.i != 0) || (v3.j != 0) || (v3.k != 0)) {
                     Sum = false;
+                    }    
                 }
             }
         }
@@ -50,23 +54,26 @@ public class Java1{
 public class Vector {
     public float i = 0.f;
     public float j = 0.f;
+    public float k = 0.f;
+    
      /*
     конструктор вектора
     */
-    public Vector(float i, float j){
+    public Vector(float i, float j, float k){
           this.i = i;
           this.j = j;  
+          this.k = k;
     }
     
     public Vector plus(Vector x){
         float i, j;
-        Vector v3 = new Vector(this.i+x.i, this.j + x.j);
+        Vector v3 = new Vector(this.i+x.i, this.j + x.j, this.k + x.k);
         return v3;
     }
     
     public boolean equals (Vector x){
         boolean result = false;
-        if ((this.i == x.i) && (this.j == x.j)){
+        if ((this.i == x.i) && (this.j == x.j)&& (this.k == x.k)){
             result = true;
         }
         return result;
