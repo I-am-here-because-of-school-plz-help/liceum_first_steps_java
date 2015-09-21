@@ -1,0 +1,59 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package j1;
+
+/**
+ *Бесполкзный класс
+ * @author Adler Fogel
+ */
+public class J1 {
+
+    public static void main(String[] args) {
+       //Vector v1 = new Vector(1,2);
+       //Vector v2 = new Vector(5,6);
+       //Vector v3 = v1.plus(v2);
+      //Vector v4 = v2.plus(v1);
+      
+       test();
+       }
+    /**
+     * Test
+     */
+    public static void test(){
+        boolean equalsI0k = true;
+        for(int i = -10; i<= 10; i++){
+            for(int j = -10 ; j<= 10; j++){
+                Vector v1 = new Vector(i,j);
+                Vector v2 = new Vector(i,j);
+                Vector v3 = v1.plus(v2);
+                Vector v4 = v1.plus_modul(v2);
+                equalsI0k = false;
+                
+                }
+            }
+        
+    if () {
+        System.out.println("Сумма Дно");
+    } else {
+        System.out.println("Cумма норм");
+    }
+    }
+}
+     
+    
+/*}*/
+       
+       
+       
+           
+       
+       
+       
+       
+       
+    
+    
+
