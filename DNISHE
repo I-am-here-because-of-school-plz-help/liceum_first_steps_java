@@ -1,59 +1,74 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package j1;
-
-/**
- *Бесполкзный класс
- * @author Adler Fogel
- */
-public class J1 {
+public class Java1{
 
     public static void main(String[] args) {
-       //Vector v1 = new Vector(1,2);
-       //Vector v2 = new Vector(5,6);
-       //Vector v3 = v1.plus(v2);
-      //Vector v4 = v2.plus(v1);
-      
-       test();
-       }
-    /**
-     * Test
-     */
-    public static void test(){
-        boolean equalsI0k = true;
-        for(int i = -10; i<= 10; i++){
-            for(int j = -10 ; j<= 10; j++){
-                Vector v1 = new Vector(i,j);
-                Vector v2 = new Vector(i,j);
-                Vector v3 = v1.plus(v2);
-                Vector v4 = v1.plus_modul(v2);
-                equalsI0k = false;
-                
+       Java1();
+        test();
+
+       
+    }
+    
+    public static void Java1(){
+        boolean equalsOk = true;
+        for (int i = -100; i <= 100; i++){
+            for (int j = -100; j <= 100; j++){
+                Vector v1 = new Vector(i,j);// Задаем координаты вектора
+                Vector v2 = new Vector(i,j);// Задаем координаты вектора
+                if(!v1.equals(v2)){
+                    equalsOk = false;//Равны вектора?
                 }
             }
-        
-    if () {
-        System.out.println("Сумма Дно");
-    } else {
-        System.out.println("Cумма норм");
+        }
+        if(equalsOk){
+            System.out.println("Ok" );// выводим результат 
+        }
+        else{
+            System.out.println("Dno");// выводим результат
+        }
     }
+    public static void test(){// программа тестирующую функцию plus
+        boolean Sum = true;//задаём логическую переменную
+        for(int i = -100; i<= 100; i++){
+            for (int j = -100; j <= 100; j++){
+                Vector v1 = new Vector(i,j);// задаём координаты вектора
+                Vector v2 = new Vector( -1 *i , -1 * j);//Задаем координаты обратные
+                Vector v3 = v1.plus(v2);// записываем результат сложения
+                if((v3.i != 0) || (v3.j != 0)){
+                    Sum = false;
+                }
+            }
+        }
+        if(Sum){
+            System.out.println("ok");// выводим результат 
+        }
+        else{
+            System.out.println("DnoDhishe");//  выводим результат
+        }
+    }
+
+}
+
+public class Vector {
+    public float i = 0.f;
+    public float j = 0.f;
+     /*
+    конструктор вектора
+    */
+    public Vector(float i, float j){
+          this.i = i;
+          this.j = j;  
+    }
+    
+    public Vector plus(Vector x){
+        float i, j;
+        Vector v3 = new Vector(this.i+x.i, this.j + x.j);
+        return v3;
+    }
+    
+    public boolean equals (Vector x){
+        boolean result = false;
+        if ((this.i == x.i) && (this.j == x.j)){
+            result = true;
+        }
+        return result;
     }
 }
-     
-    
-/*}*/
-       
-       
-       
-           
-       
-       
-       
-       
-       
-    
-    
-
