@@ -5,7 +5,7 @@ public class Sortirovochka {
 		int[] chisla= new int[N];;
 		fillArray(chisla,N);
 		printArray(chisla);
-		sort(chisla);
+		// sort(chisla);
 		printArray(chisla);
 	}
 	/**
@@ -18,9 +18,9 @@ public class Sortirovochka {
 		}
 	}
 	/**
-	* Этот метод сортирует массив
+	* Этот метод сортирует массив по убыванию
 	**/
-	static void sort(int[] array){
+	static void sortDesc(int[] array){
 		System.out.println("BubbleSorting ascending");
 		for (int i=1; i<array.length ;i++ ) {
 			for (int j=i; j<array.length ;j++ ) {
@@ -33,6 +33,21 @@ public class Sortirovochka {
 		}
 	}
 
+	/**
+	* Этот метод сортирует массив по возрастанию
+	**/
+	static void sortAsc(int[] array){
+		System.out.println("BubbleSorting ascending");
+		for (int i=1; i<array.length ;i++ ) {
+			for (int j=i; j<array.length ;j++ ) {
+				if (array[j]<array[j-1]){ //Обмен
+					int buffer 	= array[j] 	; //ПРомежуточное хранилище значения
+					array[j] 	= array[j-1]; //меняем
+					array[j-1] 	= buffer	; // кладем обратно
+				}
+			}
+		}
+	}
 	static void printArray(int[] array){
 		System.out.println("Array:");
 		for (int i=0; i< array.length ; i++ ) {
